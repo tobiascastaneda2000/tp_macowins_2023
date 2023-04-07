@@ -7,12 +7,20 @@ public class Venta {
   LocalDate fecha;
   MedioDePago medioDePago;
 
+  Venta(Prenda prenda, int cantidad, LocalDate fecha, MedioDePago medioDePago){
+    this.prenda = prenda;
+    this.cantidad = cantidad;
+    this.fecha = fecha;
+    this.medioDePago = medioDePago;
+  }
+
   LocalDate devolverFecha(){
     return fecha;
   }
 
-  double precioPrenda(){
-    return .....
+  double precioTotal(){
+    /*return (prenda.precio() + medioDePago.recargo()) * this.cantidad;*/
+    return (prenda.precio() + medioDePago.recargo(this.prenda)) * this.cantidad;
 
   }
 

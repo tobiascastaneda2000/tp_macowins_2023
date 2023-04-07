@@ -1,14 +1,14 @@
+import java.time.LocalDate;
+
 public class Prenda {
   TipoPrenda tipo ;
-  double precio;
+  double precioPropio;
   Estado estado;
-  RegistroVenta registroVenta;
 
-  Prenda(TipoPrenda tipo, int precio, Estado estado,RegistroVenta registroVenta){
+  Prenda(TipoPrenda tipo, int precio, Estado estado){
     this.tipo = tipo;
-    this.precio = precio;
+    this.precioPropio = precio;
     this.estado = estado;
-    this.registroVenta = registroVenta;
   }
 
   TipoPrenda tipoPrenda(){
@@ -16,19 +16,22 @@ public class Prenda {
   }
 
   double precio(){
-    return estado.precio(this.precio);
+    return estado.precio(this.precioPropio);
   }
 
-
-
-  void vender(){
-
+  /*
+  void vender(int cantidad, MedioDePago medioDePago){
+    Venta unaVenta = new Venta(this, cantidad, LocalDate.now(), medioDePago);
+    registroVenta.registrar( unaVenta );}
+*/
+/*         Venta( prenda,  cantidad ,  fecha,  medioDePAgo )       */
   }
 
-
-}
 
 /*COMENTARIOS
 
+Que pasa si el valorFijo es mayor a precio es estado promocion???
+Vender() estaria en prenda o en RegistroVenta??
+Al momento de crear una clase Prenda se le asigno por parametro una variable registroVenta, no tiene sentido??
+*/
 
-Que pasa si el valorFijo es mayor a precio es estado promocion???*/

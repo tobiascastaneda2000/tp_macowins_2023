@@ -10,8 +10,8 @@ public class RegistroVenta {
   }
 
   double mostrarGanaciasDeUnaFecha(LocalDate fecha){
-    return ventas.stream().filter(venta -> venta.devolverFecha().isEqual(fecha)).map(venta -> venta.precioPrenda()).sum();
+    return ventas.stream().filter(venta -> venta.devolverFecha().isEqual(fecha)).mapToDouble(venta -> venta.precioTotal()).sum();
   }
-  /*[Venta, Venta] -> [23.4, 23.6, 21.4...]*/
+  /*[Venta1, Venta2, Venta3] -> [23.4, 23.6, 21.4...]*/
 
 }
